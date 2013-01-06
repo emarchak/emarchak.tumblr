@@ -1,126 +1,125 @@
 {block:tumblrThemr}
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" type="text/css" />
-  <link rel="stylesheet" href="themes/emarchak/font-awesome.css" type="text/css" media="screen" />
-  <link rel="stylesheet" href="themes/emarchak/emarchak.css" type="text/css" media="screen" />
-  <style type="text/css">{CustomCSS}</style>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" type="text/css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css" />
+<link rel="stylesheet" href="http://emarchak.github.com/emarchak/emarchak.css" type="text/css" media="screen" />
 
 
-  <div id="content">
-      {block:SearchPage}
-        {block:SearchResults}
-          <h2 id="searchresults">{SearchResultCount} results for {SearchQuery}</h2>
-        {/block:SearchResults}
+<div id="content">
+    {block:SearchPage}
+      {block:SearchResults}
+        <h2 id="searchresults">{SearchResultCount} results for {SearchQuery}</h2>
+      {/block:SearchResults}
 
-        {block:NoSearchResults}
-          <h2 id="searchresults">No search results for {SearchQuery}</h2>
-        {/block:NoSearchResults}
-      {/block:SearchPage}
-      <!-- posts begin -->
-      {block:Posts}
-        <article class="post">
-          {block:Photo}
-            {LinkOpenTag}
-              <img src="{PhotoURL-500}" class="media" alt="{PhotoAlt}" />
-            {LinkCloseTag}
-          {/block:Photo}
-          {block:Video}
-            {Video-500}
-          {/block:Video}
-          {block:Audio}
-            {block:AlbumArt}
-              <img src="{AlbumArtURL}"  class="media" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}">
-            {/block:AlbumArt}
-            <div class="audio">
-              {AudioPlayerWhite}
-              <div class="meta">
-              {PlayCountWithLabel}
-              {block:ExternalAudio}
-                <a href="{ExternalAudioURL}"><i class="icon-external-link" /> {lang:Download}</a>
-              {/block:ExternalAudio}
-              </div>
+      {block:NoSearchResults}
+        <h2 id="searchresults">No search results for {SearchQuery}</h2>
+      {/block:NoSearchResults}
+    {/block:SearchPage}
+    <!-- posts begin -->
+    {block:Posts}
+      <article class="post">
+        {block:Photo}
+          {LinkOpenTag}
+            <img src="{PhotoURL-500}" class="media" alt="{PhotoAlt}" />
+          {LinkCloseTag}
+        {/block:Photo}
+        {block:Video}
+          {Video-500}
+        {/block:Video}
+        {block:Audio}
+          {block:AlbumArt}
+            <img src="{AlbumArtURL}"  class="media" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}">
+          {/block:AlbumArt}
+          <div class="audio">
+            {AudioPlayerWhite}
+            <div class="meta">
+            {PlayCountWithLabel}
+            {block:ExternalAudio}
+              <a href="{ExternalAudioURL}"><i class="icon-external-link"></i> {lang:Download}</a>
+            {/block:ExternalAudio}
             </div>
-          {/block:Audio}
-          {block:Quote}
-            <blockquote>{Quote}</blockquote>
-            <div class="copy">
-              {block:Source}
-                &mdash; {Source}
-              {/block:Source}
-            </div>
-          {/block:Quote}
-          {block:Answer}
-            <blockquote class="question">
-              {Question}
-            </blockquote>
-            <p class="asker">{Asker}</p>
-            <div class="copy">{Answer}</div>
-          {/block:Answer}
-          {block:Chat}
-            {block:Title}<h2>{Title}</h2>{/block:Title}
-            <div class="chat">
-              {block:Lines}
-                <div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>
-              {/block:Lines}
-            </div>
-          {/block:Chat}
-          {block:Link}
-            <h2><a href="{URL}" {Target}>{Name}</a></h2>
-            {block:Description}<div class="copy">{Description}</div>{/block:Description}
-          {/block:Link}
-          {block:Text}
-            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
-            <div class="copy">{Body}</div>
-          {/block:Text}
+          </div>
+        {/block:Audio}
+        {block:Quote}
+          <blockquote>{Quote}</blockquote>
+          <div class="copy">
+            {block:Source}
+              &mdash; {Source}
+            {/block:Source}
+          </div>
+        {/block:Quote}
+        {block:Answer}
+          <blockquote class="question">
+            {Question}
+          </blockquote>
+          <p class="asker">{Asker}</p>
+          <div class="copy">{Answer}</div>
+        {/block:Answer}
+        {block:Chat}
+          {block:Title}<h2>{Title}</h2>{/block:Title}
+          <div class="chat">
+            {block:Lines}
+              <div class="line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</div>
+            {/block:Lines}
+          </div>
+        {/block:Chat}
+        {block:Link}
+          <h2><a href="{URL}" {Target}>{Name}</a></h2>
+          {block:Description}<div class="copy">{Description}</div>{/block:Description}
+        {/block:Link}
+        {block:Text}
+          {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+          <div class="copy">{Body}</div>
+        {/block:Text}
 
-          {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
+        {block:Caption}<div class="copy">{Caption}</div>{/block:Caption}
 
-          <footer>
+        <footer>
 
-            {block:Date}
-            <p><a href="{Permalink}"><i class="icon-time" />{TimeAgo}</a></p>
-            {/block:Date}
+          {block:Date}
+          <p><a href="{Permalink}"><i class="icon-time"></i>{TimeAgo}</a></p>
+          {/block:Date}
 
-            {block:ContentSource}
-            <p><a href="{SourceURL}"><i class="icon-external-link" />{SourceTitle}</a></p>
-            {/block:ContentSource}
+          {block:ContentSource}
+          <p><a href="{SourceURL}"><i class="icon-external-link"></i>{SourceTitle}</a></p>
+          {/block:ContentSource}
 
-            {block:Reblog}
-            <p><i class="icon-external-link" />{ReblogParentName}</p>
-            {/block:Reblog}
+          {block:Reblog}
+          <p><a href="{ReblogParentURL}"><i class="icon-external-link"></i>{ReblogParentName}</a></p>
+          {/block:Reblog}
 
-            {block:PostNotes}
-            <p><i class="icon-bullhorn" />{PostNotes}</p>
-            {/block:PostNotes}
+          {block:PostNotes}
+          <p><i class="icon-bullhorn"></i>{PostNotes}</p>
+          {/block:PostNotes}
 
-            {block:HasTags}
-            <p><i class="icon-tag" />{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</p>
-            {/block:HasTags}
+          {block:HasTags}
+          <p><i class="icon-tag"></i>{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</p>
+          {/block:HasTags}
 
-          </footer>
-        </article>
-      {/block:Posts}
-      <!-- posts end -->
-      {block:Pagination}
-        <nav id="pagination">
-          {block:PreviousPage}<a href="{PreviousPage}" class="prev"><i class="icon-hand-left"/>Older, please!</a>{/block:PreviousPage}
-          {block:NextPage}<a href="{NextPage}" class="next">Newer, please!<i class="icon-hand-right"/></a>{/block:NextPage}
-        </nav>
-      {/block:Pagination}
-    </div>
+        </footer>
+      </article>
+    {/block:Posts}
+    <!-- posts end -->
+    {block:Pagination}
+      <nav id="pagination">
+        {block:PreviousPage}<a href="{PreviousPage}" class="prev"><i class="icon-hand-left"></i>Older, please!</a>{/block:PreviousPage}
+        {block:NextPage}<a href="{NextPage}" class="next">Newer, please!<i class="icon-hand-right"></i></a>{/block:NextPage}
+      </nav>
+    {/block:Pagination}
+  </div>
 
-  <aside id="sidebar">
-    <h1><a href="/">{Title}</a></h1>
-    <div id="description">
-      <a href="http://myplanetdigital.com">web dev</a><br/>
-      <a href="/tagged/bike">cyclist</a><br/>
-      <a href="/tagged/improv">improvisor</a></div>
+<aside id="sidebar">
+  <h1><a href="/">{Title}</a></h1>
+  <div id="description">
+    <a href="http://myplanetdigital.com">web dev</a><br/>
+    <a href="/tagged/bike">cyclist</a><br/>
+    <a href="/tagged/improv">improvisor</a></div>
 
-    <nav id="pages"><ul>
-      <li><a href="http://github.com/emarchak">Here's some code.<i class="icon-github" /></a></li>
-      <li><a href="http://twitter.com/emarchak">Those are some tweets.<i class="icon-twitter" /></a></li>
-      <li><a href="http://pinterest.com/emarchak">That's a pinboard.<i class="icon-pinterest" /></a></li>
-      <li><a href="{RSS}">There's an rss too.<i class="icon-rss" /></a></li>
-      {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}<i class="icon-question-sign"/></a></li>{/block:Pages}{/block:HasPages}
-    </ul></nav>
-  </aside>
+  <nav id="pages"><ul>
+    <li><a href="http://github.com/emarchak">Here's some code.<i class="icon-github"></i></a></li>
+    <li><a href="http://twitter.com/emarchak">Those are some tweets.<i class="icon-twitter"></i></a></li>
+    <li><a href="http://pinterest.com/emarchak">That's a pinboard.<i class="icon-pinterest"></i></a></li>
+    <li><a href="{RSS}">There's an rss too.<i class="icon-rss"></i></a></li>
+    {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}<i class="icon-question-sign"></i></a></li>{/block:Pages}{/block:HasPages}
+  </ul></nav>
+</aside>
 {/block:tumblrThemr}

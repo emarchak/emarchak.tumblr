@@ -66,7 +66,6 @@ blockquote, pre {
 }
 
 blockquote {
-  font-style: italic;
   font-weight: bolder;
   line-height: 1.5em;
   font-size: 1.5em;
@@ -138,10 +137,11 @@ article h2 {
 }
 article h2 a {
   color:#262324;
+  text-decoration: none;
 }
 
 article .media {
-  max-width: 96%;
+  width: 96%;
   background-color: #fff;
   padding: 2%;
 }
