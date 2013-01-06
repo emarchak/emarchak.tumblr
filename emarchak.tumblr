@@ -87,9 +87,9 @@
           <p><a href="{ReblogParentURL}"><i class="icon-external-link"></i>{ReblogParentName}</a></p>
           {/block:Reblog}
 
-          {block:PostNotes}
-          <p><i class="icon-bullhorn"></i>{PostNotes}</p>
-          {/block:PostNotes}
+          {block:NoteCount}
+          <p><i class="icon-bullhorn"></i>{NoteCountWithLabel}</p>
+          {/block:NoteCount}
 
           {block:HasTags}
           <p><i class="icon-tag"></i>{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</p>
