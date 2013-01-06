@@ -1,0 +1,193 @@
+/**
+ * emarchak.css
+ *   styles for a custom tumblr theme
+ */
+
+body {
+  background-color: #f2f2f2;
+  position:relative;
+  font: 12px/24px 'Lucida Grande', sans-serif ;
+  color: #262324;
+}
+
+#sidebar {
+  background-color: #262324;
+  background: -webkit-linear-gradient(left, #141313 0%,#262324 2%,#262324 100%);
+  position: fixed;
+  top:0;
+  right:0;
+  width: 30%;
+  height: 100%;
+}
+
+#content {
+  width: 70%;
+}
+
+#sidebar nav,
+#sidebar div,
+#content article,
+#content nav {
+  padding: 0 3em;
+}
+
+#sidebar,
+#content {
+  padding-top: 3em;
+}
+
+
+article,
+#pagination {
+  margin: 0 auto 10em;
+  max-width: 500px;
+}
+
+
+/* type */
+
+h1, h2 {
+  font-family: 'Lobster', 'Lucida Grande', sans-serif;
+  font-weight: normal;
+}
+
+a {
+  color: #ca0069;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+blockquote, pre {
+  background-color: #fff;
+  margin: 0 0 1em 0;
+    padding: 1em 1.5em;
+}
+
+blockquote {
+  font-style: italic;
+  font-weight: bolder;
+  line-height: 1.5em;
+  font-size: 1.5em;
+}
+
+pre code {
+  display:block;
+  background: #fff url('code.png') repeat-y top left;
+  padding-left: 1em;
+}
+
+
+img {
+  max-width: 100%;
+}
+/* sidebar */
+#sidebar h1 {
+  font-size: 1em;
+  margin: 0 3em .25em;
+  border-bottom: .25em solid #ca0069;
+}
+
+#sidebar h1 a {
+  color: #f2f2f2 !important;
+  font-size: 3em;
+  text-transform: lowercase;
+}
+
+#sidebar a {
+  color: #666;
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  color:#f2f2f2;
+}
+
+
+#description a {
+  font-weight:bold;
+  color:#f2f2f2;
+}
+
+#description a:hover {
+  color: #ca0069;
+}
+
+#sidebar ul {
+  padding:0;
+  margin-top:10em;
+}
+
+#sidebar li {
+  margin-bottom: 1.75em;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+#sidebar i {
+  font-weight: normal;
+  font-size: 1.25em;
+  padding-left: .25em;
+}
+
+/* articles */
+article h2 {
+  font-size: 2.25em;
+  letter-spacing: .1em;
+}
+article h2 a {
+  color:#262324;
+}
+
+article .media {
+  max-width: 96%;
+  background-color: #fff;
+  padding: 2%;
+}
+
+/* article footer */
+footer {
+  font-size: 0.8em;
+  line-height: 2em;
+}
+
+footer * {
+  color:#817477;
+  text-decoration: none;
+  text-transform: lowercase;
+}
+
+footer i {
+  padding-right: .75em;
+}
+
+footer p {
+  margin: 0;
+  display: inline-block;
+  padding-right: 5em;
+}
+
+/* pagination */
+
+#pagination {
+  text-align:center;
+}
+
+#pagination a {
+  margin:auto 1.5em;
+  color: #817477;
+  text-decoration:none;
+}
+
+#pagination a:hover {
+  color: #ca0069;
+}
+
+#pagination i {
+  padding: 0 .75em;
+}
+
+#pagination i {
+ font-size: 1.25em;
+}
