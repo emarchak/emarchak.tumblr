@@ -140,11 +140,15 @@ article h2 a {
   text-decoration: none;
 }
 
-.html_photoset,
 article .media {
   width: 96%;
   background-color: #fff;
   padding: 2%;
+}
+
+article .media img {
+  width:50%;
+  float:left;
 }
 
 /* article footer */

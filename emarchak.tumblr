@@ -22,6 +22,14 @@
             <img src="{PhotoURL-500}" class="media" alt="{PhotoAlt}" />
           {LinkCloseTag}
         {/block:Photo}
+        {block:Photoset}
+          <div class="media">
+          {block:Photos}
+              <img src="{PhotoURL-250}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" />
+          {/block:Photos}
+          </div>
+        {/block:Photoset}
+
         {block:Video}
           {Video-500}
         {/block:Video}
