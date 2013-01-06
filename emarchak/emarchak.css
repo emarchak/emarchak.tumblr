@@ -147,8 +147,9 @@ article .media {
 }
 
 article .media img {
-  width:50%;
-  float:left;
+  height: auto;
+  width: 31%;
+  display: inline;
 }
 
 /* article footer */
