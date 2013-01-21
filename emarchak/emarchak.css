@@ -66,7 +66,7 @@ blockquote, pre {
   padding: 1em 1.5em;
 }
 
-blockquote.quote {
+blockquote {
   font-weight: bolder;
   line-height: 1.5em;
   font-size: 1.5em;
@@ -76,10 +76,6 @@ blockquote footer {
   text-align: right;
   font-weight: normal;
   font-style: italic;
-}
-
-blockquote footer:before {
-   content: "&mdash ";
 }
 
 pre code {
