@@ -23,7 +23,7 @@
           {LinkCloseTag}
         {/block:Photo}
         {block:Photoset}
-          <div class="media">
+          <div class="media photoset">
           {block:Photos}
               <img src="{PhotoURL-250}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" />
           {/block:Photos}
@@ -48,10 +48,10 @@
           </div>
         {/block:Audio}
         {block:Quote}
-          <blockquote>{Quote}</blockquote>
+          <blockquote class="quote">{Quote}</blockquote>
           <div class="copy">
             {block:Source}
-              &mdash; {Source}
+              {Source}
             {/block:Source}
           </div>
         {/block:Quote}
@@ -103,26 +103,30 @@
           <p><i class="icon-tag"></i>{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</p>
           {/block:HasTags}
 
+          {block:PostNotes}
+          {PostNotes}
+          {/block:PostNotes}
+
         </footer>
       </article>
     {/block:Posts}
     <!-- posts end -->
     {block:Pagination}
-      <nav id="pagination">
-        {block:PreviousPage}<a href="{PreviousPage}" class="prev"><i class="icon-hand-left"></i>Older, please!</a>{/block:PreviousPage}
-        {block:NextPage}<a href="{NextPage}" class="next">Newer, please!<i class="icon-hand-right"></i></a>{/block:NextPage}
-      </nav>
+      <ul class="pagination">
+        {block:PreviousPage}<li class="prev"><a href="{PreviousPage}"><i class="icon-hand-left"></i>Older, please!</a></li>{/block:PreviousPage}
+        {block:NextPage}<li class="next"><a href="{NextPage}">Newer, please!<i class="icon-hand-right"></i></a></li>{/block:NextPage}
+      </ul>
     {/block:Pagination}
   </div>
 
-<aside id="sidebar">
+<aside class="sidebar">
   <h1><a href="/">{Title}</a></h1>
-  <div id="description">
+  <div class="description">
     <a href="http://myplanetdigital.com">web dev</a><br/>
     <a href="/tagged/bike">cyclist</a><br/>
     <a href="/tagged/improv">improvisor</a></div>
 
-  <nav id="pages"><ul>
+  <nav class="pages"><ul>
     <li><a href="http://github.com/emarchak">Here's some code.<i class="icon-github"></i></a></li>
     <li><a href="http://twitter.com/emarchak">Those are some tweets.<i class="icon-twitter"></i></a></li>
     <li><a href="http://pinterest.com/emarchak">That's a pinboard.<i class="icon-pinterest"></i></a></li>
@@ -130,4 +134,8 @@
     {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}<i class="icon-question-sign"></i></a></li>{/block:Pages}{/block:HasPages}
   </ul></nav>
 </aside>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://emarchak.github.com/themes/emarchak/emarchak.js"></script>
+
 {/block:tumblrThemr}
