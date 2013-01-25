@@ -1,31 +1,77 @@
-$(function() {
+jQuery(document).ready(function($) {
 
-   function ready_left(){
-    var link_width = $(this).find('a').width();
-    var icon_width = $(this).find('i').width();
-    $(this).find('a').css({
-      'display' : 'block',
-      'left'    : icon_width-link_width,
-      'width'   : link_width,
-    });
-  };
+  //prepare function
+  function readyIcon(element, iconSide){
+    iconSide = iconSide || 'left';
+    var link = $(element).find('a'); // reduce the number of calls to find
 
-  $('.pages li').each(ready_left);
-//  $('.pagination li.next').each(ready_left);
-//  $('.pagination li.prev').each(ready_right);
+    var linkWidth = link.width();
+    var iconWidth = link.find('i').width();
 
-  $('.pages li').hover(
+    var linkStyle = new Array();
+    linkStyle['display'] = 'block';
+    linkStyle['width'] = linkWidth;
+    linkStyle[iconSide] = iconWidth - linkWidth;
+
+    link.css(linkStyle);
+  }
+
+  //animate display of text
+  function viewIcon(element, iconSide){
+    iconSide = iconSide || 'left';
+
+    var fullWidth = new Array();
+    fullWidth[iconSide] = 0;
+    $(element).find('a').animate(fullWidth, 500);
+  }
+
+  //animate hiding of text
+  function hideIcon(element, iconSide) {
+    iconSide = iconSide || 'left';
+    var link = $(element).find('a'); // reduce the number of calls to find
+
+    var linkWidth = link.width();
+    var iconWidth = link.find('i').width();
+
+    var shortWidth = new Array();
+    shortWidth[iconSide] = iconWidth - linkWidth;
+
+    link.animate(shortWidth, 500);
+  }
+
+  // prepare left side icons
+  $('.pages li, .pagination .next').each(function(){
+    var that = this;
+    readyIcon(that, 'left');
+  });
+
+  // prepare right side icons
+  $('.pagination .prev').each(function(){
+    var that = this;
+    readyIcon(that, 'right');
+  });
+
+  // hoverIntent for left
+  $('.pages li, .pagination .next').hoverIntent(
     function(){
-      $(this).find('a').animate({
-        left : 0
-      });
+      var that = this;
+      viewIcon(that, 'left');
     },
     function(){
-      var link_width = $(this).find('a').width();
-      var icon_width = $(this).find('i').width();
-      $(this).find('a').animate({
-        left : icon_width-link_width
-      });
+      var that = this;
+      hideIcon(that, 'left');
+    }
+  );
+
+  // hoverIntent for right
+  $('.pagination .prev').hoverIntent(
+    function(){
+      var that = this;
+      viewIcon(that, 'right');
+    },
+    function(){
+      var that = this;
+      hideIcon(that, 'right');
     }
   );
 });

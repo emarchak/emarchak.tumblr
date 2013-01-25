@@ -140,11 +140,14 @@ img {
 }
 
 /* !sidebar animation */
+.pagination li,
 .sidebar li {
   display: block;
   overflow: hidden;
 }
-.sidebar li a{
+.pagination li a,
+.sidebar li a {
+  white-space:nowrap;
   height: 2em;
   position: relative;
 }
@@ -211,16 +214,18 @@ footer p {
 /* !pagination */
 
 .pagination {
-  text-align:center;
+  list-style: none;
+  overflow: auto;
+  padding: 0;
 }
 
 .pagination li {
-  list-style: none;
-  display: inline;
+  float:left;
+  width: 50%;
 }
-
 .pagination a {
   margin:auto 1.5em;
+  padding: 1em 0;
   color: #817477;
   text-decoration:none;
 }
@@ -229,12 +234,13 @@ footer p {
   color: #ca0069;
 }
 
-.pagination i {
-  padding: 0 .75em;
+.pagination .prev a {
+  float:right;
 }
 
 .pagination i {
- font-size: 1.25em;
+  padding: 0 .75em;
+  font-size: 1.25em;
 }
 
 
