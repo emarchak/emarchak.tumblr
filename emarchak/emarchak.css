@@ -190,6 +190,9 @@ article .media.photoset img {
   display:block;
 }
 
+article.tumblr {
+  display:none;
+}
 /* !article footer */
 footer {
   font-size: 0.8em;
